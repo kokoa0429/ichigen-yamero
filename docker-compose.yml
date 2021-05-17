@@ -1,0 +1,9 @@
+version : "3.7"
+services:
+  web:
+    image: nginx
+    restart: always
+    volumes:
+        - ./index.html:/usr/share/nginx/html/index.html
+    ports:
+      - 127.0.0.1:8080:80
