@@ -26,13 +26,21 @@
     <marquee scrolldelay="100">1限やめろ</marquee>
     <marquee scrollamount="8">1限やめろ</marquee>
     <div class='rotate'>1限やめろ</div>
-    <h1 class="rainbow">1限やめろ</h1>
+    <div class="gaming-wrap">
+        <div class="gaming-inner-back"></div>
+        <div class="gaming-inner-front">1限やめろ</div>
+    </div>
     <a href="https://github.com/kokoa0429/ichigen-yamero">github</a>
-    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
+        data-show-count="false">Tweet</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+
         marquee {
             font-size: 40px;
         }
+
         @keyframes rainbow-text-anim {
             0% {
                 background-position: 0 1600px;
@@ -42,15 +50,31 @@
                 background-position: 1600px 0;
             }
         }
-        .rotate{
+
+        .rotate {
             animation: rotate-x 1.5s linear infinite;
-            font-size:40px;
+            font-size: 40px;
         }
+
         @keyframes rotate-x {
-            0% {transform: rotateX(0deg);}
-            100% {transform:rotateX(360deg); }
+            0% {
+                transform: rotateX(0deg);
+            }
+
+            100% {
+                transform: rotateX(360deg);
+            }
         }
-        .rainbow {
+
+        .gaming-wrap {
+            font-family: 'Yusei Magic', sans-serif;
+            font-size: 5em;
+            margin: .24em 0 .48em .16em;
+        }
+
+        .gaming-inner-back::before {
+            content: "1限やめろ";
+            position: absolute;
             background: -webkit-linear-gradient(left,
                     rgba(255, 0, 0, 1) 0%,
                     rgba(255, 154, 0, 1) 10%,
@@ -65,17 +89,23 @@
                     rgba(255, 0, 0, 1) 100%);
             background-size: 1600px 200px;
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             animation-duration: 1s;
             animation-name: rainbow-text-anim;
             animation-iteration-count: infinite;
             animation-fill-mode: forwards;
             animation-timing-function: linear;
+            filter: blur(.2em);
+            z-index: -1;
+            font-weight: bold;
         }
 
-        h1 {
-            font-size: 5em;
+        .gaming-inner-front {
+            color: white;
+            text-shadow: 0px 4px 8px rgba(0, 0, 0, .24);
         }
     </style>
 </body>
+
 </html>
